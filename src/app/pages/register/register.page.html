@@ -1,0 +1,29 @@
+<ion-content>
+  <figure text-center padding>
+    <ion-icon name="arrow-back-outline" (click)="goToLogin()" size="large">Regresar</ion-icon>
+    <img src="assets/img/logoo.jpeg" alt="">
+  </figure>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    <div class="grid">
+      <div class="g-col-12">
+        <ion-label>Nombre</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </div>
+      <div class="g-col-12">
+        <ion-label>Apellido</ion-label>
+        <ion-input formControlName="lastName"></ion-input>
+      </div>
+      <div class="g-col-12">
+        <ion-label>Correo Electronico</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </div>
+      <div class="g-col-12">
+        <ion-label>Contraseña</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+        <div>{{errorMessage}}</div>
+      </div>
+      <ion-button [disabled]="!registerForm.valid" type="submit">Registrar</ion-button>
+    </div>
+  </form>
+</ion-content>
